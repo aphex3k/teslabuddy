@@ -5,7 +5,7 @@ pipeline {
         AUTH = credentials('gitea_docker_deploy')
     }
     triggers {
-        cron(BRANCH_NAME == "main" ? '''H H H * *''' : "")
+        cron(BRANCH_NAME == "master" ? '''H H H * *''' : "")
     }
     stages {
         stage('Checkout') {
