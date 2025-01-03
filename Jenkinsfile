@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label "docker" }
     environment {
         tag = sh(returnStdout: true, script: 'basename $(mktemp XXXXX) | tr "[:upper:]" "[:lower:]"').trim()
         AUTH = credentials('gitea_docker_deploy')
